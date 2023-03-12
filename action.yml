@@ -1,7 +1,7 @@
 name: 'Safe Action Debugger'
 description: 'Protected interactive debugger for GitHub Actions with tmate.io. Docker supported.'
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'action.js'
 branding:
   icon: 'terminal'
