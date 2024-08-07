@@ -129,7 +129,7 @@ if [ -n "${TMATE_ENCRYPT_PASSWORD}" ]; then
   WEB_ENC_URI="$(uriencode "${WEB_ENC}")"
   # Shorten this URL to avoid mask by Github Actions Runner
   ENC_URL="https://tete1030.github.io/safe-debugger-action/?ssh=${SSH_ENC_URI}&web=${WEB_ENC_URI}"
-  ENC_URL_SHORT="$(curl -si https://git.io -F "url=${ENC_URL}" | tr -d '\r' | sed -En 's/^Location: (.*)/\1/p')"
+  ENC_URL_SHORT="$(curl -s 'https://is.gd/create.php?format=simple&url='${ENC_URL} | tr -d '\r')"
 fi
 TIMEOUT_MESSAGE="If you don't connect to this session, it will be *SKIPPED* in ${timeout} seconds at ${kill_date}. To skip this step now, simply connect the ssh and exit."
 
